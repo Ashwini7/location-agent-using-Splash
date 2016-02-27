@@ -1,0 +1,3 @@
+administer ip_locator_with_splash:
+  title: 'Administer IP Locator with Splash settings'
+  description: 'Configure IP Locator module & splash message settings.'

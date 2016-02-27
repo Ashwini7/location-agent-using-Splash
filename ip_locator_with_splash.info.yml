@@ -1,0 +1,8 @@
+name: IP Locator with Splash
+description: Display origin website in splash message according to user's IP address.
+package: Location
+type: module
+configure: ip_locator_with_splash.iplocatorconfigurationform
+dependencies:
+  - libraries
+core: 8.x
