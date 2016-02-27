@@ -1,0 +1,7 @@
+ip_locator_with_splash.iplocatorconfigurationform:
+  path: '/admin/config/system/ip-locator-configuration'
+  defaults:
+    _form: '\Drupal\ip_locator_with_splash\Form\IpLocatorConfigurationForm'
+    _title: 'IP Locator Configuration'
+  requirements:
+    _permission: 'administer ip_locator_with_splash'

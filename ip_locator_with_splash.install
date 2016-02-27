@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the ip2country module.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+function ip_locator_with_splash_schema() {
+  $schema = array();
+  if (!db_table_exists('country_url_data')) {
+    $schema['country_url_data'] = array(
+      'description' => 'The table to store website url data according to country code.',
+      'fields' => array(
+        'id' => array(
+          'description' => 'The primary identifier of table.',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'country_label' => array(
+          'description' => 'Title of country field',
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => TRUE,
+          'default' => '',
+        ),
+        'country_code' => array(
+          'description' => 'Two digit Code which country belongs to.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+          'default' => '',
+        ),
+        'website_url' => array(
+          'description' => 'Website url of respective countries.',
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => TRUE,
+          'default' => '',
+        ),
+        'created' => array(
+          'description' => 'Created on.',
+          'type' => 'int',
+          'length' => '60',
+          'not null' => TRUE,
+          'default' => REQUEST_TIME,
+        ),
+        'updated' => array(
+          'description' => 'updated on.',
+          'type' => 'int',
+          'length' => '60',
+          'not null' => TRUE,
+          'default' => REQUEST_TIME,
+        ),
+      ),
+      'primary key' => array('id'),
+    );
+  }
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * @string
+ */
+function ip_locator_with_splash_install() {
+  /*$link_text = SafeMarkup::format('here');
+  $url = 'admin/config/system/ip-locator-configuration';
+  $configlink = \Drupal::l($link_text, $url);
+  drupal_set_message(t('Please make sure website urls according to country codes are entered on our module configuration page for the correct functioning of Locator. Click $configlink to visit configuration page.'), 'warning');*/
+}
